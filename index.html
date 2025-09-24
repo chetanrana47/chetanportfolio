@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chetan Nimwal - Portfolio</title>
+  <style>
+    :root {
+      --bg: #0f1724;
+      --card: #0b1220;
+      --accent: #06b6d4;
+      --muted: #94a3b8;
+      --radius: 14px;
+      --shadow: 0 6px 20px rgba(2,6,23,0.6);
+    }
+    * { box-sizing: border-box; transition: 0.3s; }
+    body { margin: 0; font-family: Inter, sans-serif; background: var(--bg); color: #e6eef6; line-height: 1.5; scroll-behavior: smooth; }
+    a { text-decoration: none; color: inherit; }
+    .container { max-width: 1000px; margin: auto; padding: 20px; }
+    header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; position: sticky; top:0; background: var(--bg); z-index:100; padding:10px 20px; }
+    .logo { font-weight: 700; font-size: 24px; color: var(--accent); }
+    nav a { margin-left: 20px; color: var(--muted); position: relative; }
+    nav a.primary { border:1px solid rgba(255,255,255,0.04); padding:6px 12px; border-radius:8px; color: var(--accent); }
+    nav a.active::after { content:''; position:absolute; bottom:-5px; left:0; width:100%; height:2px; background: var(--accent); border-radius:2px; }
+    section { margin-bottom: 50px; opacity:0; transform: translateY(20px); }
+    section.visible { opacity:1; transform: translateY(0); transition: all 0.8s ease; }
+    .hero { display:flex; justify-content: space-between; background: var(--card); padding:20px; border-radius: var(--radius); box-shadow: var(--shadow); }
+    .hero-text { max-width:600px; }
+    .hero-text h1 { font-size:28px; }
+    .hero-text p { color: var(--muted); }
+    .btn { background: var(--accent); color: #021016; padding: 10px 14px; border-radius: 10px; font-weight: 600; border:none; cursor:pointer; margin-top:10px; }
+    .btn:hover { transform: translateY(-2px); }
+    .two-col { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+    .skills .skill { margin-bottom:10px; }
+    .bar { width:100%; height:10px; background: rgba(255,255,255,0.05); border-radius:10px; overflow:hidden; }
+    .bar i { display:block; height:100%; background: linear-gradient(90deg,var(--accent),#7c3aed); }
+    .projects-grid, .certificates-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px; }
+    .card { background: var(--card); padding:16px; border-radius: var(--radius); box-shadow: var(--shadow); cursor:pointer; position:relative; transition: transform 0.3s, box-shadow 0.3s; }
+    .card:hover { transform: translateY(-5px); box-shadow: 0 12px 25px rgba(2,6,23,0.8); }
+    .card h4 { margin-top:0; }
+    .tag { display:inline-block; background: rgba(255,255,255,0.03); color: var(--muted); padding:4px 8px; border-radius:6px; font-size:12px; margin-right:6px; margin-top:6px; }
+    .read-more { background:none; border:none; color: var(--accent); cursor:pointer; font-weight:600; padding:0; margin-top:8px; }
+    .short-desc, .full-desc { overflow: hidden; transition: max-height 0.5s ease; }
+    .full-desc { max-height:0; }
+    .full-desc.expanded { max-height:500px; }
+    footer { text-align:center; color: var(--muted); margin-top:50px; }
+  </style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <div class="logo">Chetan Nimwal</div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#certificates">Certificates</a>
+      <a href="#contact" class="primary">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="hero">
+    <div class="hero-text">
+      <h1>Hi, I'm <span style="color:var(--accent)">Chetan Nimwal</span></h1>
+      <p>B.Tech CSE student passionate about Android & web development. Experienced in building projects with Java, Python, SQL, Firebase, and UI/UX design.</p>
+      <a class="btn" href="https://drive.google.com/file/d/1yOe6Cj3vXQgXePL8_WkLawRbV4_JXR9z/view?usp=drivesdk" target="_blank">Download Resume</a>
+    </div>
+  </section>
+
+  <section id="about" class="two-col">
+    <div>
+      <h3>About Me</h3>
+      <p>I am a B.Tech CSE student at CSMSS College of Engineering with a Diploma in IT. I build mobile and web apps, focusing on database design, UI/UX, and problem-solving.</p>
+      <h4>Education</h4>
+      <ul>
+        <li>B.Tech in Computer Science & Engineering, CSMSS College of Engineering</li>
+        <li>Diploma in Information Technology, Government Polytechnic Ambad</li>
+      </ul>
+    </div>
+    <div class="skills">
+      <h3>Skills</h3>
+      <div class="skill"><span>Java</span><div class="bar"><i style="width:80%"></i></div></div>
+      <div class="skill"><span>Python</span><div class="bar"><i style="width:75%"></i></div></div>
+      <div class="skill"><span>SQL & XAMPP</span><div class="bar"><i style="width:70%"></i></div></div>
+      <div class="skill"><span>Android Studio & UI/UX</span><div class="bar"><i style="width:80%"></i></div></div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h3>Projects</h3>
+    <div class="projects-grid">
+      <div class="card">
+        <h4>FitGuru – Fitness Guide App</h4>
+        <p class="short-desc">Led a team of 4 in developing an academic prototype fitness app offering guided yoga and workout routines...</p>
+        <p class="full-desc">Led a team of 4 in developing an academic prototype fitness app offering guided yoga and workout routines. Designed and integrated GIF-based instructional visuals with interactive workout modules for better user engagement. Built a responsive UI/UX using Android Studio and XML layouts, ensuring smooth navigation across devices. Conducted testing and proposed future enhancements, including dynamic personalized workout plans.</p>
+        <button class="read-more" onclick="toggleDesc(this)">Read More</button>
+        <div class="tag">Android</div><div class="tag">Java</div><div class="tag">XML</div><div class="tag">Firebase</div>
+      </div>
+      <div class="card">
+        <h4>AgroMart – Farmer-to-Customer Platform</h4>
+        <p class="short-desc">Developed an individual academic project that connects farmers directly with customers for crop and product sales...</p>
+        <p class="full-desc">Developed an individual academic project that connects farmers directly with customers for crop and product sales. Implemented farmer login and authentication to ensure secure access and product management. Designed and integrated CRUD operations (add, update, delete crops) using SQL with XAMPP backend. Built a simple purchase workflow, focusing on database schema design and query optimization for efficient data handling.</p>
+        <button class="read-more" onclick="toggleDesc(this)">Read More</button>
+        <div class="tag">Python</div><div class="tag">HTML</div><div class="tag">CSS</div><div class="tag">SQL</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="certificates">
+    <h3>Certificates</h3>
+    <div class="certificates-grid">
+      <div class="card">
+        <h4>OCI AI Foundations — Oracle</h4>
+        <a class="btn" href="https://drive.google.com/file/d/1120Wc9_HD1iAzvaRquKdshzYfgqg11Ta/view?usp=drivesdk" target="_blank">View / Download</a>
+      </div>
+      <div class="card">
+        <h4>Python Essentials 1 — Cisco</h4>
+        <a class="btn" href="https://drive.google.com/file/d/1-skoyrD3LauA9S0FvhI7vU62_WYCh3Gn/view?usp=drivesdk" target="_blank">View / Download</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h3>Contact</h3>
+    <p>Email: <strong style="color:var(--accent)">chetannimwal@gmail.com</strong> | LinkedIn: <a href="https://www.linkedin.com/in/chetannimwal" target="_blank">Profile</a></p>
+  </section>
+
+  <footer>© <span id="year"></span> Chetan Nimwal. All Rights Reserved.</footer>
+</div>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  function toggleDesc(btn){
+    const card = btn.parentElement;
+    const fullDesc = card.querySelector('.full-desc');
+    const shortDesc = card.querySelector('.short-desc');
+    fullDesc.classList.toggle('expanded');
+    if(fullDesc.classList.contains('expanded')){
+      shortDesc.style.display='none';
+      btn.textContent='Show Less';
+    } else {
+      shortDesc.style.display='block';
+      btn.textContent='Read More';
+    }
+  }
+
+  // Scroll fade-in animation
+  const sections = document.querySelectorAll('section');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => { if(entry.isIntersecting){ entry.target.classList.add('visible'); } });
+  }, { threshold: 0.1 });
+  sections.forEach(sec => observer.observe(sec));
+
+  // Active menu highlight on scroll
+  const navLinks = document.querySelectorAll('nav a[href^="#"]');
+  window.addEventListener('scroll', () => {
+    let fromTop = window.scrollY + 60;
+    navLinks.forEach(link => {
+      const section = document.querySelector(link.hash);
+      if(section.offsetTop <= fromTop && section.offsetTop + section.offsetHeight > fromTop){
+        link.classList.add('active');
+      } else { link.classList.remove('active'); }
+    });
+  });
+</script>
+</body>
+</html>
